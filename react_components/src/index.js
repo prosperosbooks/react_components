@@ -1,12 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import faker from "faker";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import CommentDetail from "./CommentDetail";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const App = () => {
+  return (
+    <div className="ui container comments">
+      <CommentDetail
+        author={faker.name.firstName()}
+        time={faker.date.weekday()}
+        content={faker.lorem.sentence()}
+        avatar={faker.image.avatar()}
+      />
+      <CommentDetail
+        author={faker.name.firstName()}
+        time={faker.date.weekday()}
+        content={faker.lorem.sentence()}
+        avatar={faker.image.avatar()}
+      />
+      <CommentDetail
+        author={faker.name.firstName()}
+        time={faker.date.weekday()}
+        content={faker.lorem.sentence()}
+        avatar={faker.image.avatar()}
+      />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.querySelector("#root"));
+
+// Creating components each time:
+
+// 1. Isolate duplicated JSX
+// 2. What is the purpose of that JSX code? Name it.
+// 3. Create new file for this component; should have same name
+// 4. Create new component in new file; paste JSX intoi t
+// 5. Set up the plumbing with 'props'
