@@ -3,28 +3,43 @@ import ReactDOM from "react-dom";
 import faker from "faker";
 
 import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <CommentDetail
-        author={faker.name.firstName()}
-        time={faker.date.weekday()}
-        content={faker.lorem.sentence()}
-        avatar={faker.image.avatar()}
-      />
-      <CommentDetail
-        author={faker.name.firstName()}
-        time={faker.date.weekday()}
-        content={faker.lorem.sentence()}
-        avatar={faker.image.avatar()}
-      />
-      <CommentDetail
-        author={faker.name.firstName()}
-        time={faker.date.weekday()}
-        content={faker.lorem.sentence()}
-        avatar={faker.image.avatar()}
-      />
+      <ApprovalCard>
+        <CommentDetail
+          author={faker.name.firstName()}
+          time={faker.date.weekday()}
+          content={faker.lorem.sentence()}
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+
+      <ApprovalCard>
+        <CommentDetail
+          author={faker.name.firstName()}
+          time={faker.date.weekday()}
+          content={faker.lorem.sentence()}
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+
+      <ApprovalCard>
+        <CommentDetail
+          author={faker.name.firstName()}
+          time={faker.date.weekday()}
+          content={faker.lorem.sentence()}
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+
+      <ApprovalCard>
+        <div>
+          <h4>Warning! Are you sure you want to do this?</h4>
+        </div>
+      </ApprovalCard>
     </div>
   );
 };
